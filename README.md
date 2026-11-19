@@ -1,18 +1,14 @@
 # OX-MABSR
 
-**OX-MABSR: A Benchmark for Open-domain Explainable Multimodal Aspect-Based Sentiment Reasoning**
+A benchmark for testing how well AI models can understand sentiment in images and text together. Published at AAAI 2026.
 
-*Published at AAAI 2026*
+## What It Does
 
-## 🌐 Live Demo
+You give it an image and some text. It tells you the sentiment — positive, negative, or neutral — and explains why. The benchmark has a dataset, training code, and a web demo so you can try it out.
 
-A modern web frontend is available in the [`frontend/`](./frontend/) directory. It provides an interactive interface for exploring the OX-MABSR benchmark with:
+## Try It
 
-- **Landing Page** — Overview of capabilities and benchmark statistics
-- **Interactive Demo** — Upload images and text for sentiment analysis
-- **About Page** — Paper details, methodology, and citation
-
-### Running the Frontend
+Start the web demo:
 
 ```bash
 cd frontend
@@ -20,48 +16,21 @@ npm install
 npm run dev
 ```
 
-For more details, see the [Frontend README](./frontend/README.md).
-
----
-
-## 📊 Data Link
-
-[Download Dataset from Google Drive](https://drive.google.com/drive/folders/1ayN8fIQF1aLegnNIVM8pFiegRI8BQKMo?usp=sharing)
-
-## 📁 Data
-
-![Data](data.jpg)
-
-<img src="data2.jpg" width="400">
-
-## 📁 Code Structure
-
-```
-CODE/
-├── train.py              # Main training script
-├── train_cot.py          # Chain-of-Thought training
-├── train_grpo.py         # GRPO-based training
-├── inference.py          # Inference script
-├── qwen3_vl.py           # Qwen3-VL model architecture
-├── mydataset.py          # Dataset loading utilities
-├── eval_*.py             # Evaluation scripts (BLEU, ROUGE, LLM)
-└── *.py                  # Additional utilities
-```
-
-## 🚀 Quick Start
+## Run the Models
 
 ```bash
-# Install dependencies
 pip install torch transformers peft numpy
-
-# Run inference
-python CODE/inference.py
-
-# Train model
-python CODE/train.py
+python CODE/inference.py   # run inference
+python CODE/train.py        # train a model
 ```
 
-## 📚 Citation
+Download the dataset from [Google Drive](https://drive.google.com/drive/folders/1ayN8fIQF1aLegnNIVM8pFiegRI8BQKMo?usp=sharing).
+
+## Paper
+
+Read the full paper in `paper.pdf`.
+
+## Citation
 
 ```bibtex
 @inproceedings{liu2026oxmabsr,
@@ -71,9 +40,3 @@ python CODE/train.py
   year={2026}
 }
 ```
-
-## 🔗 Links
-
-- [📄 Paper PDF](./paper.pdf)
-- [📊 Dataset](https://drive.google.com/drive/folders/1ayN8fIQF1aLegnNIVM8pFiegRI8BQKMo?usp=sharing)
-- [🌐 Frontend Demo](./frontend/)
